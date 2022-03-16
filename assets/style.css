@@ -119,49 +119,66 @@ img {
 
 .works__grid {
     position: relative;
-    height: auto;
-    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 20px;
+    padding: 0;
+    margin: 0;
 }
 .works__grid article {
     position: relative;
-    
     height: auto;
-    width: 100%;
-    background-color: pink;
-}
-
-.works__grid .works__img {
-    position: inherit;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    width: auto;
-}
-.works__grid img {
-    position:inherit;
-    height: auto;
-    width: 75vw;
-}
-
-.works__grid figcaption {
-    position: absolute;
-    width: 75vw;
-    height: 100%;
-    font-size: 0.7em;
-    color: #DEF4FD;
-    background-color: #FC6454;
-    
-}
-
-/* .works__grid p{
-    position: relative;
-    background-color: pink;
-    width: 100%;
-    height: 100%;
+    max-width: 100vw;
     padding: 0;
     margin: 0;
-} */
+}
+ .works__grid article figure {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    max-width: auto;
+    padding: 0;
+    margin: 0;
+}
+
+.works__grid figure img {
+    position: relative;
+    height: auto;
+    width: 70vw;
+    justify-self: center;
+    height: auto;
+    z-index: 2;
+}
+
+.works__grid .works__figcaption {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 70vw;
+    height: 100%;
+    max-width: auto;
+    max-height: auto;
+    background-color: #FC6454;
+    z-index: 1;
+} 
+.works__grid .works__figcaption figcaption {
+    position: absolute;
+    width: auto;
+    height: auto;
+    max-height: 100%;
+    font-size: 0.7em;
+    color: #DEF4FD;
+    text-align: justify;
+    padding: 5vw 3vw 5vw 3vw;
+    opacity: 0;
+}
+
+
 h1 {
     text-align: center;
     font-size: 2em;
@@ -214,4 +231,22 @@ hr {
         color: #FFF;
     }
     
+}
+@media (min-width: 610px){
+    .hero {
+        display: flex;
+        flex-direction: row;
+        justify-content:space-around;
+        max-width: 100%;
+        height: 48vh;
+    }
+    .hero  span {
+        display: inherit;
+        flex-direction: column;
+        justify-content: center;
+        width: 70vw;
+        max-width: 100%;
+        height: 100%;
+    }
+
 }
