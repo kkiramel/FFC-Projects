@@ -3,11 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width= device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Jollibee Survey Form</title>
 </head>
 <body>
-    
+    <header>
+        <h1 id="title">Jollibee Survey Form</h1>
+        <p id="description">Dito sa Jollibee, ikaw ang <strong>bida</strong>! Ang iyong komento ay aming isinasapuso at pinapahalagahan.</p>
+    </header>
+    <form action="#" id="survey-form">
+        <div class="form-group" id="personal-info">
+            <label for="name" id="name-label">
+                Pangalan
+            </label>
+                <input type="text" id="name" placeholder="Ilagay ang iyong pangalan" name="name">
+            
+            <label for="email" id="email-label">
+                Email
+            </label>
+                <input type="email" name="email" id="email" placeholder="Ilagay ang iyong Email">
+            
+            <label for="number" id="number-label">
+                Edad
+            </label>
+                <input type="number" name="number" id="number" min="10" max="99" placeholder="Ilagay ang iyong edad">
+            
+        </div>
+        <div class="form-group" id="survey-frequency">
+            <p>Gaano kadalas ka kumakain sa Jollibee?</p>
+            <select name="survey-frequency" id="dropdown">
+                <option value="" selected disabled>Pumili ng sagot</option>
+                <option value="5">Mahigit sa limang beses sa isang buwan</option>
+                <option value="2">Mahigit sa dalawang beses sa isang buwan</option>
+                <option value="1">Isang beses sa isang buwan</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <p>Kapag ikaw ay kakain sa Jollibee, sino ang madalas mong kasama?</p>
+        
+            <label>
+                <input type="radio" name="companion" class="companion">
+                Pamilya
+            </label>
+            <label>
+                <input type="radio" name="companion" class="companion">
+                Kaibigan
+            </label>
+            <label>
+                <input type="radio" name="companion" class="companion">
+                Kasintahan
+            </label>
+            <label>
+                <input type="radio" name="companion" class="companion">
+                Katrabaho
+            </label>
+            <label>
+                <input type="radio" name="companion" class="companion">
+                Mag-isa lamang ako
+            </label>
+        </div>
+        
+        <div class="form-group">
+            <p>Kapag ikaw ay kakain sa Jollibee, anong madalas mong kainin?</p>
+        <label>
+            <input type="checkbox" name="" class="" value="chicken-joy">chicken joy
+        </label>
+        <label>
+            <input type="checkbox" name="" class="" value="Burger">burger
+        </label>
+        <label>
+            <input type="checkbox" name="" class="" value="jolly-spaghetti">jolly spaghetti
+        </label>
+        <label>
+            <input type="checkbox" name="" class="" value="burger-steak">burger steak
+        </label>
+        <label>
+            <input type="checkbox" name="" class="" value="jolli-hotdog">jolli hotdog
+        </label>
+        <label>
+            <input type="checkbox" name="" class="" value="pies">pies
+        </label>
+        <label>
+            <input type="checkbox" name="" class="" value="palabok">palabok
+        </label>
+        <label>
+            <input type="checkbox" name="" class="" value="fries-sides">fries sides
+        </label>
+        <label>
+            <input type="checkbox" name="" class="" value="desserts">desserts
+        </label>
+        <textarea name="more-comment" id="more-comment" cols="30" rows="10"></textarea>
+        </div>
+        
+        <button id="submit" name="submit">Submit</button>
+    </form>
 </body>
 </html>
