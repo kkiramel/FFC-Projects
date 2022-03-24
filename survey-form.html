@@ -12,55 +12,59 @@
         <h1 id="title">Jollibee Survey Form</h1>
         <p id="description">Dito sa Jollibee, ikaw ang <strong>bida</strong>! Ang iyong komento ay aming isinasapuso at pinapahalagahan.</p>
     </header>
-    <form action="#" id="survey-form">
+    <form action="#" id="survey-form" autocomplete="off">
         <div class="form-group" id="personal-info">
-            <label for="name" id="name-label">
+            
+            <input type="text" id="name" placeholder="Ilagay ang iyong pangalan" name="name">
+            <label for="name" id="name-label" class="personal-label">
                 Pangalan
             </label>
-                <input type="text" id="name" placeholder="Ilagay ang iyong pangalan" name="name">
             
-            <label for="email" id="email-label">
+            <input type="email" name="email" id="email" placeholder="Ilagay ang iyong Email">
+            <label for="email" id="email-label" class="personal-label">
                 Email
             </label>
-                <input type="email" name="email" id="email" placeholder="Ilagay ang iyong Email">
             
-            <label for="number" id="number-label">
+            <input type="number" name="number" id="number" min="10" max="99" placeholder="Ilagay ang iyong edad">
+            <label for="number" id="number-label" class="personal-label">
                 Edad
             </label>
-                <input type="number" name="number" id="number" min="10" max="99" placeholder="Ilagay ang iyong edad">
-            
         </div>
         <div class="form-group" id="survey-frequency">
             <p>Gaano kadalas ka kumakain sa Jollibee?</p>
-            <select name="survey-frequency" id="dropdown">
+            <select name="survey-frequency" id="dropdown" class="form-control">
                 <option value="" selected disabled>Pumili ng sagot</option>
                 <option value="5">Mahigit sa limang beses sa isang buwan</option>
                 <option value="2">Mahigit sa dalawang beses sa isang buwan</option>
                 <option value="1">Isang beses sa isang buwan</option>
             </select>
         </div>
-        <div class="form-group">
+        <div class="form-group" id="survey-companion">
             <p>Kapag ikaw ay kakain sa Jollibee, sino ang madalas mong kasama?</p>
         
-            <label>
+            <label>Pamilya
                 <input type="radio" name="companion" class="companion">
-                Pamilya
+                <span class="checkmark"></span>
+                
             </label>
-            <label>
+            <label>Kaibigan
                 <input type="radio" name="companion" class="companion">
-                Kaibigan
+                <span class="checkmark"></span>
+                
             </label>
-            <label>
+            <label>Kasintahan
                 <input type="radio" name="companion" class="companion">
-                Kasintahan
+                <span class="checkmark"></span>
+                
             </label>
-            <label>
+            <label>Katrabaho
                 <input type="radio" name="companion" class="companion">
-                Katrabaho
+                <span class="checkmark"></span>
+                
             </label>
-            <label>
+            <label>Mag-isa lamang ako
                 <input type="radio" name="companion" class="companion">
-                Mag-isa lamang ako
+                <span class="checkmark"></span>
             </label>
         </div>
         
