@@ -20,13 +20,17 @@ header {
 
 h1{
     text-align: center;
-    font-size: 2.5em;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
     font-weight: 800;
+    padding: 10px;
+    margin: 10px;
 }
 
 header > p{
     text-align: center;
     font-size: 1em;
+    padding: 10px;
+    margin: 10px;
 }
 
 #survey-form {
@@ -43,6 +47,7 @@ header > p{
 .form-group {
     position: inherit;
     height: auto;
+    width: auto;
     padding: 20px;
 }
 
@@ -69,7 +74,7 @@ label {
 }
 
 #personal-info input:focus
-, #dropdown:focus{
+, #dropdown:focus, #more-comment:focus{
     outline: none;
     border-color: #be647f;
     box-shadow: 0 0 15px #ff94b4;
@@ -116,45 +121,39 @@ label {
     color:#000;
 }
 
-#survey-companion{
+#survey-radio-btn, #survey-checkbox{
     position: inherit;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-#survey-companion > p{
+#survey-radio-btn > p, #survey-checkbox > p{
     display: grid;
     grid-column: 1/3;
-    width: 100%;
-}
-
-#survey-companion > label {
-    position: relative;
-    display: block;
     width: auto;
+    
+}
+#survey-radio-btn > label, #survey-checkbox > label{
+    position: relative;
+    width: fit-content;
     height: 20px;
-    font-size: 1em;
-    padding-left: 25px;
+    font-size: clamp(0.5rem, 1em, 2rem);
+    padding-left: 50px;
     padding-top: 1.5px;
     cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
-#survey-companion .companion {
+#survey-radio-btn .companion {
     position: absolute;
-    opacity: 1;
-    cursor: pointer;
-    height: 25px;
-    width: 25px;
+    opacity: 0;
+    height: auto;
+    width: auto;
 }
 
-#survey-companion .checkmark {
+#survey-radio-btn .checkmark {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 25px;
     height: 20px;
     width: 20px;
     background-color: #FFF;
@@ -162,25 +161,164 @@ label {
     margin: 0;
     padding: 0;
     transition: 0.2s ease;
-}
-#survey-companion .companion ~ .checkmark:hover{
-    background-color: #f7c214;
+    cursor: pointer;
 }
 
-#survey-companion input:checked ~ .checkmark{
-    display: block;
+#survey-radio-btn .checkmark:after {
     content: "";
-    background-color: #f714f7;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0;
+    background-color: #f7c214;
+    transition: 0.2s ease;
 }
 
-#survey-companion > label > .checkmark::after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
+#survey-radio-btn > label:hover > .checkmark{
+    background-color: #d3aaaa;
+    transform: scale(1.1);
+    border: 1px solid #ff0022c4;
+}
+#survey-radio-btn .companion ~ .checkmark:hover{
+    background-color: #d3aaaa;
+    transform: scale(1.1);
+    border: 1px solid #ff0022c4;
+}
+
+#survey-radio-btn .companion:checked ~ .checkmark {
+    background-color:#FFF;
+    transform: scale(1);
+    border: none;
+}
+
+#survey-radio-btn .companion:checked ~ .checkmark:after{
+    opacity: 1;
+    background-color: #f7c214;
+
+}
+
+#survey-checkbox input{
+    position: absolute;
+    appearance: none;
+    background-color: #fff;
+    left: 25px;
+    margin: 0;
+    margin-right: 5px;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 0.25em;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+#survey-checkbox input:before{
+    position: absolute;
+    opacity: 0;
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: #f7c214;
+    border-radius: 0.25em;
+    margin: 0;
+    padding: 0;
+    top: 2.5px;
+    left: 2.5px;
+    transition: 100ms ease;
+    cursor: pointer;
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+
+}
+#survey-checkbox input:hover{
+    background-color: #d3aaaa;
+    border: 1px solid #ff0022c4;
+    border-radius: 0.25em;
+    transform: scale(1.1);
+}
+
+#survey-checkbox input:checked:before{
+    opacity: 1;
+}
+#survey-checkbox input:checked:hover{
+    background-color: #FFF;
+    transform: scale(1);
+    border: none;
+}
+
+#survey-form #more-comment{
+    appearance: none;
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 3px solid hsla(349, 78%, 51%, 0.89);
+    border-radius: 0.25em;
+    background-color: #f8f8f8;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    
+    resize: none;
+}
+#survey-form p{
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+#btn{
+    position: relative;
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+#submit {
+    position: inherit;
+    height: auto;
+    width: auto;
+    font-size: 1em;
+    padding: 16px 32px;
+    background-color:#FFF;
+    box-sizing: border-box;
+    border: 2px solid #f7c214;
+    border-radius: 0.25em;
+    color: #000;
+}
+
+#submit:hover{
+    background-color:#f7c214;
+    color: #FFF;
+    transition: 400ms ease;
+    cursor: pointer;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+@media(max-width: 850px){
+    header {
+        position: relative;
+        width: 80%;
+        height: auto;
+        top: 10px;
+    }
+    #survey-form {
+        position: relative;
+        height: auto;
+        width: 80%;
+        margin: 30px auto;
+    }
+}
+@media(max-width: 590px){
+    #survey-radio-btn, #survey-checkbox{
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    #survey-radio-btn > p, #survey-checkbox > p{
+        display: grid;
+        grid-column: 1/2;
+        width: auto;
+        
+    }
+
 }

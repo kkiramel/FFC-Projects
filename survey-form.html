@@ -15,35 +15,35 @@
     <form action="#" id="survey-form" autocomplete="off">
         <div class="form-group" id="personal-info">
             
-            <input type="text" id="name" placeholder="Ilagay ang iyong pangalan" name="name">
+            <input type="text" id="name" placeholder="Ilagay ang iyong pangalan" name="name" required>
             <label for="name" id="name-label" class="personal-label">
                 Pangalan
             </label>
             
-            <input type="email" name="email" id="email" placeholder="Ilagay ang iyong Email">
+            <input type="email" name="email" id="email" placeholder="Ilagay ang iyong Email" required>
             <label for="email" id="email-label" class="personal-label">
                 Email
             </label>
             
-            <input type="number" name="number" id="number" min="10" max="99" placeholder="Ilagay ang iyong edad">
+            <input type="number" name="number" id="number" min="10" max="99" placeholder="Ilagay ang iyong edad" required>
             <label for="number" id="number-label" class="personal-label">
                 Edad
             </label>
         </div>
         <div class="form-group" id="survey-frequency">
             <p>Gaano kadalas ka kumakain sa Jollibee?</p>
-            <select name="survey-frequency" id="dropdown" class="form-control">
+            <select name="survey-frequency" id="dropdown" class="form-control" required>
                 <option value="" selected disabled>Pumili ng sagot</option>
                 <option value="5">Mahigit sa limang beses sa isang buwan</option>
                 <option value="2">Mahigit sa dalawang beses sa isang buwan</option>
                 <option value="1">Isang beses sa isang buwan</option>
             </select>
         </div>
-        <div class="form-group" id="survey-companion">
+        <div class="form-group" id="survey-radio-btn">
             <p>Kapag ikaw ay kakain sa Jollibee, sino ang madalas mong kasama?</p>
         
             <label>Pamilya
-                <input type="radio" name="companion" class="companion">
+                <input type="radio" name="companion" class="companion" required>
                 <span class="checkmark"></span>
                 
             </label>
@@ -68,7 +68,7 @@
             </label>
         </div>
         
-        <div class="form-group">
+        <div class="form-group" id="survey-checkbox">
             <p>Kapag ikaw ay kakain sa Jollibee, anong madalas mong kainin?</p>
         <label>
             <input type="checkbox" name="" class="" value="chicken-joy">chicken joy
@@ -97,10 +97,15 @@
         <label>
             <input type="checkbox" name="" class="" value="desserts">desserts
         </label>
-        <textarea name="more-comment" id="more-comment" cols="30" rows="10"></textarea>
+        
+        </div>
+        <div class="form-group">
+            <textarea name="more-comment" id="more-comment" cols="30" rows="10" placeholder="(Optional) Magbigay ng iba pang komento..."></textarea>
+        </div>
+        <div class="form-group" id="btn">
+            <button id="submit" name="submit">Submit</button>
         </div>
         
-        <button id="submit" name="submit">Submit</button>
     </form>
 </body>
 </html>
