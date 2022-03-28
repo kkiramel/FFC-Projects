@@ -31,39 +31,39 @@
             </label>
         </div>
         <div class="form-group" id="survey-frequency">
-            <p>Gaano kadalas ka kumakain sa Jollibee?</p>
             <select name="survey-frequency" id="dropdown" class="form-control" required>
                 <option value="" selected disabled>Pumili ng sagot</option>
                 <option value="5">Mahigit sa limang beses sa isang buwan</option>
                 <option value="2">Mahigit sa dalawang beses sa isang buwan</option>
                 <option value="1">Isang beses sa isang buwan</option>
             </select>
+            <p id="frequency-label">Gaano kadalas ka kumakain sa Jollibee?</p>
         </div>
         <div class="form-group" id="survey-radio-btn">
             <p>Kapag ikaw ay kakain sa Jollibee, sino ang madalas mong kasama?</p>
         
             <label>Pamilya
-                <input type="radio" name="companion" class="companion" required>
+                <input type="radio" name="companion" class="companion" value="Pamilya" required>
                 <span class="checkmark"></span>
                 
             </label>
             <label>Kaibigan
-                <input type="radio" name="companion" class="companion">
+                <input type="radio" name="companion" class="companion" value="Kaibigan">
                 <span class="checkmark"></span>
                 
             </label>
             <label>Kasintahan
-                <input type="radio" name="companion" class="companion">
+                <input type="radio" name="companion" class="companion" value="Kasintahan">
                 <span class="checkmark"></span>
                 
             </label>
             <label>Katrabaho
-                <input type="radio" name="companion" class="companion">
+                <input type="radio" name="companion" class="companion" value="Katrabaho">
                 <span class="checkmark"></span>
                 
             </label>
             <label>Mag-isa lamang ako
-                <input type="radio" name="companion" class="companion">
+                <input type="radio" name="companion" class="companion" value="Mag-isa lamang ako">
                 <span class="checkmark"></span>
             </label>
         </div>
@@ -103,7 +103,7 @@
             <textarea name="more-comment" id="more-comment" cols="30" rows="10" placeholder="(Optional) Magbigay ng iba pang komento..."></textarea>
         </div>
         <div class="form-group" id="btn">
-            <button id="submit" name="submit">Submit</button>
+            <button type="submit" id="submit" name="submit">Submit</button>
         </div>
         
     </form>
