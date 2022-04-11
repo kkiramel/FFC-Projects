@@ -7,7 +7,8 @@ body{
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    
+    height: auto;
+    width: 100%;
 }
 #header{
     position: fixed;
@@ -65,30 +66,32 @@ body{
     border-bottom: 3px solid #000;
 }
 #main-container{
-    width: auto;
-    height: auto;
-}
-
-#hero-banner{
     width: 100%;
     height: auto;
-    max-height: 100vh;
+}
+#hero-container{
+    width: 100%;
+    height: auto;
+}
+#hero-banner{
+    width: 100%;
+    height: 780px;
     object-fit: cover;
     object-position: 50% 20%;
 }
 
 #hero-text {
     position: absolute;
-    top: 20%;
+    top: 155px;
     left: 70px;
     color: #FFF;
 }
 #hero-title {
     width: 500px;
+    height: auto;
     display: -webkit-box !important;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 
 #hero-description{
@@ -197,9 +200,10 @@ body{
     display: flex;
     flex-direction: row;
     width: auto;
-    height: 50vh;
+    height: auto;
     margin: 100px;
 }
+
 .version{
     display: flex;
     flex-direction: column;
@@ -208,9 +212,39 @@ body{
     height: auto;
     background-color: #FFF;
     margin: 30px;
-    border-radius: 10px;
-    border: 3px solid var(--high-color);
+    border-radius: 0 0 10px 10px;
+    border: 5px solid var(--high-color);
     text-align: center;
+    transition: ease-in 200ms;
+}
+
+.version:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 32.7%;
+    height: 100%;
+    transform: scale(0.9);
+    top: 0;
+    opacity: 0;
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(315deg, #fe327b 0%, #7ee8fa 74%);
+    background-size: 400% 400%;
+
+    -webkit-animation: ColorWheel 3s ease infinite;
+    -moz-animation: ColorWheel 3s ease infinite;
+    animation: ColorWheel 3s ease infinite;
+    transition: ease-in 200ms;
+}
+
+.version:hover:before{
+    opacity: 1;
+}
+.version:hover .hero-btn {
+    transform: scale(1.1);
+}
+.version:hover{
+    border: none;
 }
 .version-title{
     width: 100%;
@@ -220,10 +254,66 @@ body{
     color: #FFF;
 }
 .version-description{
-    height: 100%;
+    height: auto;
     width: 100%;
 }
+.version-inclusion{
+    text-align: left;
+    padding-left: 10px;
+}
+.version-description li {
+    width: 100%;
+    text-align: left;
+}
+.version .primary-btn{
+    height: auto;
 
+}
+#track-list{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+#disc-img{
+    position: absolute;
+    display: block;
+    width: auto;
+    height: 100%;
+    max-height: 400px;
+    margin-left: 200px;
+}
+#disc-img:hover{
+    background: linear-gradient(315deg, #fe327b 0%, #7ee8fa 74%);
+    animation: rotate 1s ease-in-out infinite, ColorWheel 3s ease infinite;
+    border-radius: 60%;
+    background-size: 400% 400%;
+    padding: 5px;
+}
+#track-list-title{
+    position: relative;
+    z-index:2;
+    width: 100%;
+    height: auto;
+    text-transform: uppercase;
+    text-align: center;
+    padding-left: 200px;
+}
+
+#list{
+    position: relative;
+    width: 100%;
+    columns: auto 2;
+    padding-inline: 0;
+    margin: 0;
+}
+#list li{
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+}
 h1 {
     font-size: 2.5rem;
     margin: 0;
@@ -232,11 +322,40 @@ h2 {
     font-size: 2rem;
     margin: 0;
 }
-p{
+h3 {
+    font-size: 1.8rem;
+}
+p, ul, li{
     font-size: 1em;
 }
 
 input{
     font-size: 1em;
 }
+/* 
+@media(max-height: ) */
 
+
+@-webkit-keyframes ColorWheel {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes ColorWheel {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes ColorWheel {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes rotate{
+    from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(359deg);
+      }
+}
