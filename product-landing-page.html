@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <title>Daisy Fall</title>
 </head>
 <body>
@@ -40,7 +41,7 @@
             </div>
             
         </div>
-        <div id="version-selection">
+        <div id="version-selection" class="container">
             <div class="version">
                 <h2 class="version-title">Random Ver.</h2>
                 <div class="version-description">
@@ -87,7 +88,7 @@
                 <button type="button" id="buy_tape" class="hero-btn primary-btn">Buy Now</button>
             </div>
         </div>
-        <div id="track-list">
+        <div id="track-list" class="container">
             <img src="assets/images/disc.png" alt="An image of a disc" id="disc-img">
             <h3 id="track-list-title">track list</h3>
             <ol id="list">
@@ -125,28 +126,36 @@
                 </ul>
             </div>
         </div> -->
-        <div id="online-content">
+        <div id="online-content" class="container">
             <div id="content-nav">
-                <a href="#">Music Video</a>
-                <a href="#">Teaser Photos</a>
+                <a href="#content-video">Music Video</a>
+                <a href="#content-photos">Teaser Photos</a>
             </div>
             <div id="content-video">
-                <iframe width="420" height="315" src="https://www.youtube.com/watch?v=AbZH7XWDW_k"></iframe>
+                <iframe width="950" height="534" src="https://www.youtube.com/embed/AbZH7XWDW_k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
             </div>
             <div id="content-photos">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
+                <img src="assets/images/taeyeon-invu-teaser-1.jpg" class="teaser-image" alt="">
+                <img src="assets/images/taeyeon-invu-teaser-2.jpg" class="teaser-image" alt="" >
+                <img src="assets/images/taeyeon-invu-teaser-3.jpg" class="teaser-image" alt="" >
+                <img src="assets/images/taeyeon-invu-teaser-4.jpg" class="teaser-image" alt="" >
+                <img src="assets/images/taeyeon-invu-teaser-5.jpg" class="teaser-image" alt="" >
+                <img src="assets/images/taeyeon-invu-teaser-6.jpg" class="teaser-image" alt="" >
+                <img src="assets/images/taeyeon-invu-teaser-7.jpg" class="teaser-image" alt="" >
+                <img src="assets/images/taeyeon-invu-teaser-8.jpg" class="teaser-image" alt="" >
+                <img src="assets/images/taeyeon-invu-teaser-9.jpg" class="teaser-image" alt="" >
+                <img src="assets/images/taeyeon-invu-teaser-10.jpg" class="teaser-image" alt="" >
+                <img src="assets/images/taeyeon-invu-teaser-11.jpg" class="teaser-image" alt="" >
+                <img src="assets/images/taeyeon-invu-teaser-12.jpg" class="teaser-image" alt="" >
+                <button class="carousel-btn" id="previous"><span class="material-icons-outlined">
+                    keyboard_arrow_left
+                    </span></button>
+                <button class="carousel-btn" id="next"><span class="material-icons-outlined">
+                    keyboard_arrow_right
+                    </span></button>
             </div>
         </div>
-        <div id="digital-platform">
+        <div id="digital-platform" class="container">
             <img src="" alt="spotify link" class="social-link">
             <img src="" alt="youtube music link" class="social-link">
             <img src="" alt="apple music link" class="social-link">
@@ -167,5 +176,6 @@
             <img src="" alt="">
         </div>
     </main>
+    <script src="assets/style.js"></script>
 </body>
 </html>
