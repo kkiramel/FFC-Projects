@@ -33,4 +33,5 @@ window.onload = () => {
             currentImage--;
         document.querySelector(`#content-photos :nth-child(${currentImage})`).style.display = "block";
     });
+    document.querySelector("#license-text").innerHTML = new Date().getFullYear() + " " +document.querySelector(`#license-text`).innerHTML;
 };
