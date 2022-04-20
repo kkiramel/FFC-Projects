@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body{
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    background-color: #F2F2F2;;
+    padding: 0;
+    width: auto;
+}
+#navbar{
+    position: fixed;
+    width: 25vw;
+    height: 100%;
+    margin: 20px;
+    background-color: #383838;
+    border-radius: 30px;
+}
+#navbar ul{
+    margin: 0;
+    padding: 0;
+}
+#navbar ul li{
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 30px;
+    border-bottom: 2px dotted #CDBE78;
+    
+}
+#navbar ul li:hover > a:hover{
+    background-color: #CDBE78;
+    color: #066163;
+}
+#navbar ul li a{
+    position: relative;
+    display: block;
+    width: auto;
+    height: auto;
+    text-decoration: none;
+    line-height: 50px;
+    padding-left: 15px;
+    border-radius: 30px;
+    border-bottom: 2px dotted #CDBE78;
+    color: #F2F2F2;
+}
+
+#main-doc{
+    position: relative;
+    width: auto;
+    margin-inline: 30vw 25px;
+}
+header{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #066163;
+    text-align: center;
+    margin: 20px;
+}
+p{
+    font-size: 1rem;
+    text-align: justify;
+}
+
+a{
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+@media(max-width: 815px){
+    #navbar{
+        position: relative;
+        top: 0;
+        margin: 0;
+        width: 100%;
+        height: 25vh;
+        overflow: scroll;
+    }
+    #main-doc{
+        margin: 25px;
+    }
+}
