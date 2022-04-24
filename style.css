@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+html{
+    width: 100vw;
+    height: auto;
+    overflow: hidden;
+}
+ body{
+     height: 100%;
+     width: auto;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+} 
+
+ #navbar{
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    height: 50px;
+    color: #FFF;
+    background-color: #000;
+    z-index: 99;
+    top: 0;
+}
+#navbar a{
+    position: relative;
+    width: 100%;
+    height: auto;
+    color: #FFF;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding-top: 15px;
+}
+#navbar a:nth-child(1){
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+#main_section{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+}
+
+#welcome-section{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    color: #FFF;
+    background-color: rgba(100,100,100,0.6);
+} 
+#welcome-section h1{
+    text-align: center;
+}
+#projects, #social{
+    position: relative;
+    width: 100vw;
+    height: auto;
+}
+
+
+/* css logo animation */
+ #logo_animation{
+    position: absolute;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 100;
+    opacity: 0;
+    animation: animate-appear 1s ease-out 1; 
+    overflow: hidden;
+    top: 0;
+}
+.logo_line{
+    position: absolute;
+    width: 3px;
+    height: 20vh;
+    background-color: #FFF;
+    border-radius: 100px;
+    animation: animate-appear 1s ease-in 1,
+    logo_lines 400ms ease-out 1;
+    top: 40vh;
+    overflow: hidden;
+}
+#line_blue{
+    position: absolute;
+    left: 47.2vw;
+    box-shadow: 0 0 10px 5px rgba(0,0,255,0.5);
+}
+#line_red{
+    position: absolute;
+    left: 46.5vw;
+    box-shadow: 0 0 10px 5px rgba(255,0,0,0.5);
+}
+.line_white{
+    position: absolute;
+    width: 3px;
+    height: 14vh;
+    background-color: #FFF;
+    border-radius: 100px;
+    box-shadow: 0 0 10px 5px rgba(255,255,255,0.5);
+    overflow: hidden;
+}
+#line_white_bottom{
+    top: 47.5vh;
+    left: 52vw;
+    transform: rotate(-40deg);
+    animation: animate-appear 1s ease-out 1,
+    line_white_bottom 400ms ease-out 1;
+}
+#line_white_top{
+    top: 38.1vh;
+    left: 50.5vw;
+    transform: rotate(45deg);
+    animation: animate-appear 1s ease-out 1,
+    line_white_top 400ms ease-out 1;
+}
+
+@keyframes logo_lines{
+    0%{
+        top: -40vh;
+    }
+    100%{
+        top: 40vh;
+    }
+}
+@keyframes line_white_bottom{
+    0%{
+        opacity: 1;
+        top: 100vh;
+        left: 75vw;
+    }
+    100%{
+        opacity: 1;
+        top: 47.5vh;
+        left: 52vw;
+    }
+}
+@keyframes line_white_top{
+    0%{
+        opacity: 1;
+        top: -38vh;
+        left: 93vw;
+    }
+    100%{
+        opacity: 1;
+        top: 38vh;
+        left: 50.5vw;
+    }
+}
+@keyframes animate-appear{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+
+        opacity: 0;
+    }
+}
