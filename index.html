@@ -5,15 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kyra Espartinez | Portfolio</title>
+    <script>
+        window.onbeforeunload = function () {
+            history.scrollRestoration = 'manual';
+            window.scrollTo(0, 0);
+        }
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav id="navbar">
-        <a href="" class="nav-link">KYRA</a>
-        <a href="" class="nav-link">HOME</a>
-        <a href="" class="nav-link">HOME</a>
-        <a href="" class="nav-link">HOME</a>
-        <a href="" class="nav-link">HOME</a>
+        <a href="#welcome-section" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#social" class="nav-link">Contact</a>
     </nav>
     <div id="logo_animation">
         <div class="logo_line animate" id="line_blue"></div>
@@ -29,27 +33,32 @@
             </div>
         </section>
         <section id="projects">
-            <div id="project-title">
-                <div class="project-name">
+            <div id="project-container">
+                <div class="project-title">
                     <h3>Jose Rizal - Tribute Page</h3>
                     <a href="#"><img src="images/tribute_page.png" alt="tribute page"></a>
                 </div>
-                <div class="project-name">
+                <div class="project-title">
                     <h3>Jollibee - Survey Form</h3>
                     <a href="#"><img src="images/survey form.png" alt="survey form"></a>
                 </div>
-                <div class="project-name">
+                <div class="project-title">
                     <h3>Taeyeon INVU - Landing Page</h3>
                     <a href="#"><img src="images/landing_page.png" alt="landing page"></a>
                 </div>
-                <div class="project-name">
+                <div class="project-title">
                     <h3>Javascript - Technical Documentation</h3>
                     <a href="#"><img src="images/technical_doc.png" alt="technical documentation"></a>
                 </div>
             </div>
         </section>
         <section id="social">
-            <a href="" id="profile-link" target="_blank"></a>
+            <h2 id="social_title">Let's work together :)</h2>
+            <ul id="social_list">
+                <li><a href="https://github.com/kkiramel" id="profile-link" target="_blank"><img src="/images/github_logo.png" alt="Github Logo" class="logo_img"> Github</a></li>
+                <li><a href="https://www.freecodecamp.org/kiramel" id="profile-link-fcc" target="_blank"><img src="/images/fcc_logo.png" alt="freeCodeCamp Logo" class="logo_img"></a></li>
+            </ul>
+            
         </section>
     </main>
     

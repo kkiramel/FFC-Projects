@@ -14,26 +14,30 @@ body{
 
 #navbar{
     position: fixed;
+    top: 0;
+    z-index: 99;
     display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
     width: 100%;
     height: 50px;
     color: #FFF;
-    z-index: 99;
-    top: 0;
+    background-color: rgb(59, 24, 24);
 }
 #navbar a{
-    position: relative;
-    width: 100%;
+    width: auto;
     height: auto;
     color: #FFF;
+    text-align: center;
     text-decoration: none;
+    text-transform: capitalize;
     font-size: 1.2rem;
-    padding-top: 15px;
+    padding: 15px 25px;
 }
-#navbar a:nth-child(1){
-    font-size: 1.5rem;
-    font-weight: 800;
-}
+#navbar a:hover{
+    background-color: rgb(207, 90, 90);
+    color: #000;
+ }
 #main_section{
     position: relative;
     display: flex;
@@ -65,32 +69,34 @@ body{
     padding: 20px;
     background-color: rgb(85, 85, 85);
 }
+
 #projects, #social{
     position: relative;
     width: 100%;
     height: auto;
     z-index: 91;
 }
+
 #projects{
     background-color: rgb(85, 85, 85);
 }
-#project-title{
+#project-container{
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 20px;
-    gap: 30px;
+    gap: 2rem;
     justify-items: center;
     margin-block: 50px;
 }
-.project-name{
+.project-title{
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: space-between;
     width: 80%;
-    height: 400px;
+    height: auto;
     box-shadow: 5px 3px 3px 0 rgba(255, 255, 255, 0.6);
     background-color: rgb(150, 39, 27);
     border-radius: 25px;
@@ -98,63 +104,64 @@ body{
     margin: 25px 50px;
     overflow: hidden;
 }
-.project-name h3{
-    width: 100%;
-    height: 100%;
-    margin-top: 25px;
+.project-title h3{
+    width: auto;
+    height: auto;
+    padding: 20px;
+    margin: auto;
     text-align: center;
     color: #fff;
 }
-.project-name img{
+.project-title img{
     position: relative;
     width: 100%;
     height: 100%;
 }
-.project-name:hover{
-    transform: scale(1.2);
+#social{
+    padding-block: 20px;
 }
-/* css background animation */
-#bg_container{
-    position: absolute;
-    width: 10vw;
-    height: 10vh;
-    z-index: 1;
-}
-.bg_glow{
+#social_title{
     position: relative;
-    height: 1px;
-    width: 1px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: block;
-    top: 30%;
-    border-style: hidden;
-    
+    width: auto;
+    margin-block: 20px;
+    text-align: center;
+    font-weight: 800;
+    text-shadow: 5px 3px rgb(59, 24, 24);
+    color: #FFF;
 }
-#bg_container #bg_red{
-    top: 200px;
-    left: 200px;
-    background-color: rgba(150, 40, 27, 0.7);
-    box-shadow: 0 0 35px 100px rgba(150, 40, 27, 0.3);
-    border-color: transparent;
-    animation: circle_grow_top 13s ease-in-out infinite;
+#social_list{
+    position: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: auto;
+    height: auto;
+    margin-block: 30px;
+    list-style: none;
 }
-#bg_container #bg_green{
-    top: 90vh;
-    left: 90vw;
-    background-color: rgba(4, 147, 114, 0.7);
-    box-shadow: 0 0 35px 100px rgba(4, 147, 114, 0.3);
-    border-color: transparent;
-    animation: circle_grow_bottom 13s ease-in-out infinite;
+#social_list > li {
+    margin-right: 50px;
+    margin-top: 25px;
 }
+#social_list a{
+    color: #FFF;
+    text-decoration: none;
+    font-size: 1.6rem;
+}
+.logo_img{
+    width: auto;
+    height: 100%;
+    max-height: 25px;
+} 
 /* css logo animation */
- #logo_animation{
+#logo_animation{
     position: absolute;
     display: flex;
     width: 100%;
     height: 100vh;
     background-color: #000;
-    z-index: 100;
+    z-index: -1;
     opacity: 0;
     animation: animate-appear 1s ease-out 1; 
     overflow: hidden;
@@ -212,17 +219,29 @@ h1, h2, h3, h4, h5 {
   }
   
 h1 {
-    
-    font-size: 3.052rem;
-  }
-  
-  h2 {font-size: 2.441rem;}
-  
-  h3 {font-size: 1.953rem;}
-  
-  h4 {font-size: 1.563rem;}
-  
-  h5 {font-size: 1.25rem;}
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2.5rem;
+}
+h3 {
+    font-size: 1.9rem;
+}
+h4{
+    font-size: 1.6rem;
+}
+h5{
+    font-size: 1.3rem;
+}
+h6{
+    font-size: 1rem;
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+p, ul, li{
+    font-size: 1em;
+} 
 
 
   /* css animations */
@@ -260,48 +279,32 @@ h1 {
 }
 @keyframes animate-appear{
     0%{
+        z-index: 100;
         opacity: 1;
     }
     50%{
+        z-index: 100;
         opacity: 1;
     }
     100%{
-
+        z-index: 100;
         opacity: 0;
-    }
-}
-
-@keyframes circle_grow_bottom{
-    0%{
-        top: 90vh;
-        /* box-shadow: 0 0 35px 100px rgba(4, 147, 114, 0.3); */
-    }
-    50%{
-        /* box-shadow: 0 0 35px 150px rgba(4, 147, 114, 0.3); */
-        top: 0;
-    }
-    100%{
-
-        /* box-shadow: 0 0 35px 100px rgba(4, 147, 114, 0.3); */
-        top: 90vh;
-    }
-}
-
-@keyframes circle_grow_top{
-    0%{
-        top: 0;
-        /* box-shadow: 0 0 35px 100px rgba(4, 147, 114, 0.3); */
-    }
-    50%{
-        /* box-shadow: 0 0 35px 150px rgba(4, 147, 114, 0.3); */
-        top: 90vh;
-    }
-    100%{
-
-        /* box-shadow: 0 0 35px 100px rgba(4, 147, 114, 0.3); */
-        top: 0;
     }
 }
 @keyframes no-scroll {
     from, to { overflow: hidden; } 
   }
+
+@media(max-width: 800px){
+    #project-container{
+        grid-template-columns: 1fr;
+    }
+    #navbar{
+        justify-content: center;
+    }
+}
+@media(max-width: 600px){
+    #social_list{
+        flex-direction: column;
+    }
+}
